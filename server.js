@@ -13,7 +13,8 @@ server.use('/api/projects', projectRouter);
 server.use('/api/actions', actionRouter);
 
 server.get('/', (req, res) => {
-  res.send(`<h1>Don't worry, be happy!</h1>`);
+  const messageOfTheDay = process.env.MOTD || "Don't worry, be happy!!!"
+  res.status(200).json({ motd: messageOfTheDay });
 });
 
 function logger(req, res, next) {

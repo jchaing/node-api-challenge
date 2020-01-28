@@ -13,7 +13,7 @@ server.use('/api/projects', projectRouter);
 server.use('/api/actions', actionRouter);
 
 server.get('/', (req, res) => {
-  const messageOfTheDay = process.env.MOTD || "Don't worry, be happy!!!"
+  const messageOfTheDay = process.env.MOTD || "Default - Don't worry, be happy!!!"
   res.status(200).json({ motd: messageOfTheDay });
 });
 
